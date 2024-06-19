@@ -1,14 +1,14 @@
 +++
-title =  "Configure mysql server on ubuntu"
-description = "MYSQL config buntu"
-tags = ['python', "mysql","databases"]
+title =  "Configure Hugo XML Output for RSS Feed"
+description = "Hugo Custom RSS for my reader"
+tags = ['python', "mysql","databases", "rss"]
 images = ["images/feature-image.png"]
 +++
 
 
 ## Why
 
-I installed mysql in the previous post. Now I need to setup users, create a db, and create a table.  
+I have a mysql db that will be used to store values read from the rss feed of my hugo site. I need some add some keys to help with organizatoin
    
 
 ### Parts of this series
@@ -16,130 +16,58 @@ I installed mysql in the previous post. Now I need to setup users, create a db, 
 1. [part 1](https://jnapolitano.com/en/posts/hugo-social-publisher/)
 2. [part 2](https://jnapolitano.com/en/posts/python-rss-reader/)
 3. [part 3](https://jnapolitano.com/en/posts/mysql-install-buntu/)
+4. [part 4](https://jnapolitano.com/en/posts/mysql-config/)
 
 
 
-## MYSQL Resources
+## Resources
 
-* [APT install guide](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
-* [MYSQL config guide](https://dev.mysql.com/doc/mysql-getting-started/en/#mysql-getting-started-installing)
-
-
-## Create a new user
-
-### Login as Root
+* [Hugo Page Resources](https://gohugo.io/content-management/page-resources/)
+* [Hugo Page Params](https://gohugo.io/methods/page/params/)
+* [Hugo RSS Templates](https://gohugo.io/templates/rss/)
 
 
-```bash 
+## RSS Config
 
-mysql -u root -p
+### Copy over the posts/rss.xml file from your theme
 
-```
+From hugo root you would do something like...
 
-### Create some users
+```bash
 
-In my case I will create 4 users accounts.  
-
-1. Cobra@localhost
-2. Cobra@jnapolitano.com
-3. admin@localhost
-4. dummy@localhost
-
-```dummy is just used to test service connection and has not access grants or writes```
-
-``` sql
-
-CREATE USER 'cobra'@'localhost'
-  IDENTIFIED BY 'password';
-GRANT ALL
-  ON *.*
-  TO 'cobra'@'localhost'
-  WITH GRANT OPTION;
-
- 
-
-CREATE USER 'admin'@'localhost'
-  IDENTIFIED BY 'password';
-GRANT RELOAD,PROCESS
-  ON *.*
-  TO 'admin'@'localhost';
-
-CREATE USER 'dummy'@'localhost';
+mkdir layouts && mkdir layouts/posts && cp themes/[theme]/layouts/posts/index.xml
 
 ```
 
-> ACTUALLY enter a password above. Do not use password as the user password'
+### Modify the rss.xml file
 
+#### Add post id
 
-### Logout of root
+Hugo supports a hash of the files path. It is not always unique... but for my purposes it will likely be good enough.  
 
-enter ```EXIT``` in terminal
-
-### Login as your user
-
-In my case I pass ```mysql -u cobra -p``` back to the terminal.  
-
-## Create a DB 
-
-I will create a db for my personal website. The first command to run is
-
-```sql
-
-CREATE DATABASE jnapolitano;
-
+``` xml
+<postid> {{ .File.UniqueID }}</postid>
 ```
 
-### Use your new db
+#### Add the author's name when defined
 
-```sql
-
-USE jnapolitano;
+```xml
+{{ with .Site.Params.author.name }}<author_name>{{.}}</author_name>{{end}}
 ```
 
-### Create the posts table
+#### Add the author email when defined
 
-```sql 
+```xml
 
-CREATE TABLE posts
-(
-  id                    BINARY(16) NOT NULL DEFAULT (UUID_TO_BIN(UUID())),  # Unique ID for the record. This a smallish and not a very high performance db this should be fine. 
-  author                BINARY(16),                                         # id of author
-  publish_date          DATE,                                               # publish date
-  description           VARCHAR(150),                                       # post description
-  link                  VARCHAR(150),                                       # Link to post
-  title                 VARCHAR(150),                                       # title of hte post
-  PRIMARY KEY           (id)                                                # Make the id the primary key
-);
-
+      {{ with .Site.Params.author.email }}<author_email>{{.}}</author_email>{{end}}
 ```
 
-### Create the authors table
+#### Add a hash of the author email when defined
 
-```sql
-
-CREATE TABLE authors
-(
-  id                    BINARY(16) NOT NULL DEFAULT (UUID_TO_BIN(UUID())),  # Unique ID for the record. This a smallish and not a very high performance db this should be fine. 
-  name                  VARCHAR(150),                                      # name of author
-  PRIMARY KEY           (id)                                                # Make the id the primary key
-);
-
+```xml
+{{ with .Site.Params.author.email }}<author_id>{{sha256 .}}</author_id>{{end}}
 ```
 
+#### The entire file
 
-### Create the mastodon post table
-
-I will be adding support for other systems. I am starting with mastodon. 
-
-```sql 
-
-CREATE TABLE mastodon_posts
-(
-  id                    BINARY(16) NOT NULL DEFAULT (UUID_TO_BIN(UUID())),  # Unique ID for the record. This a smallish and not a very high performance db this should be fine. 
-  post_id               BINARY(16),                                         # name of author
-  mastodon_post         VARCHAR(150),                                       # THE POST ID.. if it returns
-  PRIMARY KEY           (id)                                                # Make the id the primary key
-);
-
-```
-
+The most up to date rss file is found at [this github link](https://github.com/justin-napolitano/jnapolitano.com/blob/main/layouts/posts/rss.xml)
