@@ -8,7 +8,7 @@ images = ["images/feature-image.png"]
 
 ## Why
 
-I have a mysql db that will be used to store values read from the rss feed of my hugo site. I need some add some keys to help with organizatoin
+I have a mysql db that will be used to store values read from the rss feed of my hugo site. I need some add some keys to help with organization
    
 
 ### Parts of this series
