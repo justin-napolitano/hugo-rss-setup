@@ -3,6 +3,7 @@ title =  "Configure Hugo XML Output for RSS Feed"
 description = "Hugo Custom RSS for my reader"
 tags = ['python', "mysql","databases", "rss"]
 images = ["images/feature-image.png"]
+date = "2024-06-28"
 +++
 
 
