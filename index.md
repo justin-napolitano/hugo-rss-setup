@@ -4,7 +4,7 @@ description = "Hugo Custom RSS for my reader"
 tags = ['python', "mysql","databases", "rss"]
 images = ["images/feature-image.png"]
 date = "2024-06-28"
-categories = ["Portfolio"]
+categories = ["projects"]
 +++
 
 
