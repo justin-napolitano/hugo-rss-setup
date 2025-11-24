@@ -1,12 +1,26 @@
 ---
-slug: "github-hugo-rss-setup"
-title: "hugo-rss-setup"
-repo: "justin-napolitano/hugo-rss-setup"
-githubUrl: "https://github.com/justin-napolitano/hugo-rss-setup"
-generatedAt: "2025-11-23T09:07:22.951846Z"
-source: "github-auto"
+slug: github-hugo-rss-setup
+title: Configuring Hugo RSS Output to Include Unique Post IDs and Author Metadata
+repo: justin-napolitano/hugo-rss-setup
+githubUrl: https://github.com/justin-napolitano/hugo-rss-setup
+generatedAt: '2025-11-23T09:07:22.951846Z'
+source: github-auto
+summary: >-
+  Modifications to Hugo's RSS template adding unique post identifiers and author metadata for
+  improved feed ingestion and organization.
+tags:
+  - hugo
+  - rss-feed
+  - rss-template
+  - metadata
+  - site-generation
+seoPrimaryKeyword: hugo rss output
+seoSecondaryKeywords:
+  - unique post identifiers
+  - author metadata
+  - rss template modification
+seoOptimized: true
 ---
-
 
 # Configuring Hugo RSS Output for Enhanced Feed Metadata
 
