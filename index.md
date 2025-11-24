@@ -20,6 +20,14 @@ seoSecondaryKeywords:
   - author metadata
   - rss template modification
 seoOptimized: true
+topicFamily: static
+topicFamilyConfidence: 0.95
+topicFamilyNotes: >-
+  The post focuses on modifying a Hugo static site generator's RSS template, adding metadata to a
+  static site feed. It involves Hugo configuration and templating, which aligns closely with the
+  'Static' family that handles static sites and blog projects with Hugo. Other families like
+  automation or devtools are less relevant since the emphasis is on static site content
+  configuration rather than automation workflows or dev setups.
 ---
 
 # Configuring Hugo RSS Output for Enhanced Feed Metadata
@@ -94,3 +102,4 @@ The core of the solution is a customized `rss.xml` template placed in `layouts/p
 - [Hugo RSS Templates](https://gohugo.io/templates/rss/)
 
 This document serves as a technical reference for revisiting this project or extending its functionality in the future.
+
