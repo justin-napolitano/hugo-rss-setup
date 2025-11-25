@@ -1,20 +1,28 @@
 ---
 slug: github-hugo-rss-setup
 id: github-hugo-rss-setup
-title: hugo-rss-setup
+title: Custom RSS Setup for Hugo Projects
 repo: justin-napolitano/hugo-rss-setup
 githubUrl: https://github.com/justin-napolitano/hugo-rss-setup
 generatedAt: '2025-11-24T21:35:08.898Z'
 source: github-auto
 summary: >-
-  A configuration setup for customizing Hugo's XML output to enhance RSS feeds.
-  This repository provides a tailored RSS template and instructions to extend
-  Hugo's default RSS feed with additional metadata useful for downstream
-  processing.
-tags: []
-seoPrimaryKeyword: ''
-seoSecondaryKeywords: []
-seoOptimized: false
+  Enhance Hugo's RSS feeds with a custom XML template and additional metadata
+  for better downstream processing.
+tags:
+  - hugo
+  - rss
+  - xml
+  - bash
+  - static site generator
+seoPrimaryKeyword: hugo rss setup
+seoSecondaryKeywords:
+  - custom rss template
+  - hugo metadata
+  - rss feed customization
+  - hugo project integration
+  - enhanced rss feeds
+seoOptimized: true
 topicFamily: null
 topicFamilyConfidence: null
 kind: project
