@@ -1,33 +1,41 @@
 ---
 slug: github-hugo-rss-setup
-title: Configuring Hugo RSS Output to Include Unique Post IDs and Author Metadata
+title: Enhancing Hugo RSS Feeds with Custom Metadata
 repo: justin-napolitano/hugo-rss-setup
 githubUrl: https://github.com/justin-napolitano/hugo-rss-setup
 generatedAt: '2025-11-23T09:07:22.951846Z'
 source: github-auto
 summary: >-
-  Modifications to Hugo's RSS template adding unique post identifiers and author metadata for
-  improved feed ingestion and organization.
+  Learn how to modify Hugo's RSS output to include essential metadata for
+  improved feed processing and database integration.
 tags:
   - hugo
   - rss-feed
   - rss-template
   - metadata
   - site-generation
-seoPrimaryKeyword: hugo rss output
+  - rss
+  - mysql
+  - templates
+seoPrimaryKeyword: hugo rss metadata enhancement
 seoSecondaryKeywords:
-  - unique post identifiers
-  - author metadata
-  - rss template modification
+  - hugo rss setup
+  - custom rss templates
+  - feed metadata
+  - database ingestion
+  - author information in rss
 seoOptimized: true
 topicFamily: static
 topicFamilyConfidence: 0.95
 topicFamilyNotes: >-
-  The post focuses on modifying a Hugo static site generator's RSS template, adding metadata to a
-  static site feed. It involves Hugo configuration and templating, which aligns closely with the
-  'Static' family that handles static sites and blog projects with Hugo. Other families like
-  automation or devtools are less relevant since the emphasis is on static site content
-  configuration rather than automation workflows or dev setups.
+  The post focuses on modifying a Hugo static site generator's RSS template,
+  adding metadata to a static site feed. It involves Hugo configuration and
+  templating, which aligns closely with the 'Static' family that handles static
+  sites and blog projects with Hugo. Other families like automation or devtools
+  are less relevant since the emphasis is on static site content configuration
+  rather than automation workflows or dev setups.
+kind: project
+id: github-hugo-rss-setup
 ---
 
 # Configuring Hugo RSS Output for Enhanced Feed Metadata
