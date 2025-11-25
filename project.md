@@ -7,8 +7,8 @@ githubUrl: https://github.com/justin-napolitano/hugo-rss-setup
 generatedAt: '2025-11-24T21:35:08.898Z'
 source: github-auto
 summary: >-
-  This guide covers customizing Hugo's RSS feeds with additional metadata and a
-  tailored XML template.
+  This guide covers customizing Hugo's RSS feeds with additional metadata and a tailored XML
+  template.
 tags:
   - hugo
   - rss
@@ -24,8 +24,8 @@ seoSecondaryKeywords:
   - hugo project setup
   - xml rss configuration
 seoOptimized: true
-topicFamily: null
-topicFamilyConfidence: null
+topicFamily: static
+topicFamilyConfidence: 0.9
 kind: project
 entryLayout: project
 showInProjects: true
@@ -90,4 +90,5 @@ The generated RSS feed will include the custom fields.
 - Extend support for additional metadata fields as needed.
 - Provide examples of consuming the enhanced RSS feed with external tools or databases.
 - Add validation and testing for the RSS output to ensure compliance with RSS standards.
+
 
